@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation.vue Navigation.vue > test.name1 1`] = `
+<div>
+  <v-navigation-drawer-stub app="true" height="100vh" minivariantwidth="80" mobilebreakpoint="1264" src="" tag="nav" width="256"></v-navigation-drawer-stub>
+</div>
+`;

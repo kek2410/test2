@@ -1,0 +1,67 @@
+{{#if index}}
+import { Module } from "vuex";
+import mutations from "./mutations";
+import getters from "./getters";
+import actions from "./actions";
+import state from "./state";
+
+const {{ lowerCase name }}: Module<any, any> = {
+  namespaced: true,
+  state,
+  getters,
+  actions,
+  mutations
+};
+
+export default {{ lowerCase name }};
+{{/if}}
+
+{{#if state}}
+export declare interface State {
+  newState: any;
+}
+
+export const state: State = {
+  newState: null,
+};
+export default state;
+{{/if}}
+
+{{#if mutations}}
+import { State } from "./state";
+import { MutationTree } from "vuex";
+
+export const mutations: MutationTree<State> = {
+  NEW_MUTATION: (state: State, payload: any): any => {
+    state.newState = payload;
+  }
+};
+
+export default mutations;
+{{/if}}
+
+{{#if actions}}
+import { ActionTree } from "vuex";
+import { State } from "./state";
+import { RootState } from "@/store";
+
+export const actions: ActionTree<State, RootState> = {
+  newAction({ commit }, data: any): void {
+    commit("NEW_MUTATION", data);
+  }
+};
+
+export default actions;
+{{/if}}
+
+{{#if getters}}
+import { GetterTree } from "vuex";
+import { State } from "./state";
+import { RootState } from "@/store";
+
+export const getters: GetterTree<State, RootState> = {
+  getNewState: (state: State): any => state.newState,
+};
+
+export default getters;
+{{/if}}

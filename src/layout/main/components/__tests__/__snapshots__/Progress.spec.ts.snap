@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress.vue Progress.vue > toMatchSnapshot 1`] = `
+<div style="min-height: 4px;">
+  <v-progress-linear-stub color="blue" value="0" active="true" buffervalue="100" height="4" indeterminate="true"></v-progress-linear-stub>
+</div>
+`;
